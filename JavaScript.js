@@ -22,46 +22,39 @@ function roundRPS(computerChoice, playerChoice) {
     const outcomeLose = `You lose! ${computerChoice} beats ${playerChoice}...`
     const outcomeDraw = `Draw!`
 
+    if (playerChoice === computerChoice) {
+        console.log(outcomeDraw);
+        return "draw";
+    }
+
     if (playerChoice === "ROCK") {
         if (computerChoice === "PAPER") {
             console.log(outcomeLose);
             return "lose";
-        } else if (computerChoice === "SCISSORS") {
+        } else
             console.log(outcomeWin);
             return "win";
-        } else {
-            console.log(outcomeDraw);
-            return "draw";
         }
-    }
 
     if (playerChoice === "SCISSORS") {
         if (computerChoice === "ROCK") {
             console.log(outcomeLose);
             return "lose";
-        } else if (computerChoice === "PAPER") {
+        } else
             console.log(outcomeWin);
             return "win";
-        } else {
-            console.log(outcomeDraw);
-            return "draw";
-        }
+
     }
 
     if (playerChoice === "PAPER") {
         if (computerChoice === "SCISSORS") {
             console.log(outcomeLose);
             return "lose";
-        } else if (computerChoice === "ROCK") {
+        } else
             console.log(outcomeWin);
-            return "win";
-        } else {
-            console.log(outcomeDraw);
-            return "draw";
-        }
+            return  "win";
     }
 }
-
 
 // plays a game that is first to 5
 
@@ -84,9 +77,7 @@ function gameRPS() {
 
     (playerCount > computerCount) ?
     console.log(`You won! Final score: ${playerCount} - ${computerCount}`) :
-    console.log(`You lose! Final score: ${playerCount} - ${computerCount}`);
-
-    
+    console.log(`You lose! Final score: ${playerCount} - ${computerCount}`);   
 }
 
 gameRPS()
